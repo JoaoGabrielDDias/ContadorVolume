@@ -1,4 +1,13 @@
+// Menu Hambúrguer
+let menuHamburguer = document.getElementById('menuHamburguer');
+let menuContent = document.getElementById('menuContent');
+menuHamburguer.addEventListener('click', () => {
+    menuContent.style.display = menuContent.style.display === 'block' ? 'none' : 'block';
+});
+
+
 // Seleção de elementos
+
 let addBtns = document.querySelectorAll('.addBtn');
 let subtractBtns = document.querySelectorAll('.subtractBtn');
 let quantities = document.querySelectorAll('.quantity');
@@ -82,4 +91,11 @@ function mostrarResultados() {
             console.error('Erro ao copiar dados: ', err);
             alert('Erro ao copiar dados para a área de transferência. Por favor, copie manualmente.');
         });
+
+        
+        
 }
+
+
+
+

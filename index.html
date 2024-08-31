@@ -8,7 +8,20 @@
     <link rel="stylesheet" href="css/contador.css">
 </head>
 <body>
+
+    <!-- Menu Hambúrguer -->
+    <div id="menuHamburguer">
+        <i class="fas fa-bars"></i>
+        <div id="menuContent">
+            <a href="sobre.html">Sobre</a>
+            <a href="https://wa.me/qr/4D3ORPP35NGSF1">Contato</a>
+        </div>
+    </div>
+
+    <!-- Container Principal -->
     <div id="container">
+
+        <!-- Contador de Itens -->
         <div class="item-container">
             <div class="item">🧑 Masculino</div>
             <div class="quantity">0</div>
@@ -17,6 +30,7 @@
                 <button class="btn subtractBtn"><i class="fas fa-minus"></i></button>
             </div>
         </div>
+
         <div class="item-container">
             <div class="item">👩 Feminino</div>
             <div class="quantity">0</div>
@@ -82,9 +96,9 @@
                 <button class="btn subtractBtn"><i class="fas fa-minus"></i></button>
             </div>
         </div>
-        
-        
-        <button id="concluirBtn" onclick="remove()">Gerar</button>
+        <!-- (Repita os elementos acima para cada item que deseja contar) -->
+
+        <button id="concluirBtn">Gerar</button>
         <div id="resultContainer" style="display: none;">
             <h1 class="rs">Resultado</h1>
             <div id="totalVolumes"></div>
@@ -97,10 +111,11 @@
         </div>
     </div>
 
+    <!-- Tag de Desenvolvedor -->
     <div id="developerTag">
-        &copy; João Gabriel 
+        &copy; João Gabriel
     </div>
 
-        <script src="javascript/contador.js"></script>
+    <script src="javascript/contador.js"></script>
 </body>
 </html>
