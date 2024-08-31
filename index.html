@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Caixas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/contador.css">
+</head>
+<body>
+    <div id="container">
+        <div class="item-container">
+            <div class="item">🧑 Masculino</div>
+            <div class="quantity">0</div>
+            <div class="btn-container">
+                <button class="btn addBtn"><i class="fas fa-plus"></i></button>
+                <button class="btn subtractBtn"><i class="fas fa-minus"></i></button>
+            </div>
+        </div>
+        <div class="item-container">
+            <div class="item">👩 Feminino</div>
+            <div class="quantity">0</div>
+            <div class="btn-container">
+                <button class="btn addBtn"><i class="fas fa-plus"></i></button>
+                <button class="btn subtractBtn"><i class="fas fa-minus"></i></button>
+            </div>
+        </div>
+        <div class="item-container">
+            <div class="item">👫 Não se aplica</div>
+            <div class="quantity">0</div>
+            <div class="btn-container">
+                <button class="btn addBtn"><i class="fas fa-plus"></i></button>
+                <button class="btn subtractBtn"><i class="fas fa-minus"></i></button>
+            </div>
+        </div>
+        <div class="item-container">
+            <div class="item">👟 Calçados</div>
+            <div class="quantity">0</div>
+            <div class="btn-container">
+                <button class="btn addBtn"><i class="fas fa-plus"></i></button>
+                <button class="btn subtractBtn"><i class="fas fa-minus"></i></button>
+            </div>
+        </div>
+        <div class="item-container">
+            <div class="item">🧦 Meia</div>
+            <div class="quantity">0</div>
+            <div class="btn-container">
+                <button class="btn addBtn"><i class="fas fa-plus"></i></button>
+                <button class="btn subtractBtn"><i class="fas fa-minus"></i></button>
+            </div>
+        </div>
+        <div class="item-container">
+            <div class="item">🍩 Alimento</div>
+            <div class="quantity">0</div>
+            <div class="btn-container">
+                <button class="btn addBtn"><i class="fas fa-plus"></i></button>
+                <button class="btn subtractBtn"><i class="fas fa-minus"></i></button>
+            </div>
+        </div>
+        <div class="item-container">
+            <div class="item">⚽️ Acessórios</div>
+            <div class="quantity">0</div>
+            <div class="btn-container">
+                <button class="btn addBtn"><i class="fas fa-plus"></i></button>
+                <button class="btn subtractBtn"><i class="fas fa-minus"></i></button>
+            </div>
+        </div>
+        <div class="item-container">
+            <div class="item">🛹 Equipamentos</div>
+            <div class="quantity">0</div>
+            <div class="btn-container">
+                <button class="btn addBtn"><i class="fas fa-plus"></i></button>
+                <button class="btn subtractBtn"><i class="fas fa-minus"></i></button>
+            </div>
+        </div>
+        
+                <div class="item-container">
+            <div class="item">🛍️ Sacolas/Env</div>
+            <div class="quantity">0</div>
+            <div class="btn-container">
+                <button class="btn addBtn"><i class="fas fa-plus"></i></button>
+                <button class="btn subtractBtn"><i class="fas fa-minus"></i></button>
+            </div>
+        </div>
+        
+        
+        <button id="concluirBtn" onclick="remove()">Gerar</button>
+        <div id="resultContainer" style="display: none;">
+            <h1 class="rs">Resultado</h1>
+            <div id="totalVolumes"></div>
+            <p id="copiedMsg">Dados copiados para 📋 Área de transferência 📋</p>
+            <table id="copiedTable"></table>
+            <div id="progressBarContainer">
+                <div id="progressBar"></div>
+                <div id="progressText">0%</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="developerTag">
+        &copy; João Gabriel 
+    </div>
+
+        <script src="javascript/contador.js"></script>
+</body>
+</html>
