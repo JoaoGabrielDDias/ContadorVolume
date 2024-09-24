@@ -6,15 +6,21 @@
     <title>Adicionar Caixas</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="css/contador.css">
+     <!-- Outras tags head -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.1.9/sweetalert2.min.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 </head>
 <body>
 
     <!-- Menu Hambúrguer -->
     <div id="menuHamburguer">
-        <i class="fas fa-bars"></i>
+        <i class="fa fa-bars"></i>
+    </div>
+
+    <div id="sidebar">
         <div id="menuContent">
-            <a href="sobre.html">Sobre</a>
-            <a href="https://wa.me/qr/4D3ORPP35NGSF1">Contato</a>
+            <a href="#section1">Contato</a>
         </div>
     </div>
 
@@ -99,23 +105,16 @@
         <!-- (Repita os elementos acima para cada item que deseja contar) -->
 
         <button id="concluirBtn">Gerar</button>
-        <div id="resultContainer" style="display: none;">
-            <h1 class="rs">Resultado</h1>
-            <div id="totalVolumes"></div>
-            <p id="copiedMsg">Dados copiados para 📋 Área de transferência 📋</p>
-            <table id="copiedTable"></table>
-            <div id="progressBarContainer">
-                <div id="progressBar"></div>
-                <div id="progressText">0%</div>
-            </div>
-        </div>
-    </div>
+      
 
     <!-- Tag de Desenvolvedor -->
     <div id="developerTag">
         &copy; João Gabriel
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.1.9/sweetalert2.all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="javascript/contador.js"></script>
 </body>
 </html>
