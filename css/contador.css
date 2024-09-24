@@ -4,24 +4,26 @@ body {
     font-family: Arial, sans-serif;
     background: #252525;
     display: flex;
+    position: fixed;
+    top: 0;
+    width: 100%;
     justify-content: center;
     align-items: center;
-    position: relative;
 }
 
 #container {
     height: 100vh;
-    max-width: 400px;
+    width: 100%;
+    max-width: 1000px;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    position: fixed;
-    top: 0;
     justify-content: center;
     background-color: #fff;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: -40px
 }
 
 .item-container {
@@ -133,6 +135,10 @@ body {
     z-index: 999; /* Para garantir que a sidebar fique acima do conteúdo */
 }
 
+.hidden {
+    display: none; /* Esconde o menu */
+}
+
 #menuHamburguer {
     position: fixed;
     color: #000000;
@@ -154,7 +160,7 @@ body {
 }
 
 #menuContent a:hover {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(7, 182, 109, 0.5);
 }
 
 /* Estilo para esconder e mostrar a sidebar */

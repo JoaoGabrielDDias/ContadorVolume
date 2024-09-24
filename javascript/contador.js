@@ -2,6 +2,7 @@
 document.getElementById('menuHamburguer').addEventListener('click', () => {
   const sidebar = document.getElementById('sidebar');
   sidebar.classList.toggle('show');
+  
 });
 
 // Seleção de elementos
