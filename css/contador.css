@@ -2,16 +2,22 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background: #f2f2f2;
+    background: #252525;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    position: relative;
 }
 
 #container {
-    width: 90%;
+    height: 100vh;
     max-width: 400px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    justify-content: center;
     background-color: #fff;
     border-radius: 10px;
     padding: 20px;
@@ -22,7 +28,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .box {
@@ -43,11 +49,17 @@ body {
     position: absolute;
     justify-content: center;
     text-align: center;
-    right: 48%;
+    right: 43%;
     background-color: #aefcd0; 
     width: 35px;
     height: 35px;
     border: 1px solid #000000;
+    transition: all ease 0.40s;
+}
+
+.item {
+    font-size: 16px;
+    
 }
 
 .btn-container {
@@ -59,7 +71,7 @@ body {
     background-color: #27ae60;
     color: #fff;
     border: none;
-    border-radius: 50%;
+    border-radius: 10%;
     width: 40px;
     height: 40px;
     font-size: 18px;
@@ -67,11 +79,12 @@ body {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    margin: 0 5px;
+    margin: 0 10px;
+    transition: all ease 0.40s;
 }
 
 .btn:hover {
-    background-color: #219653;
+    background-color: #18cbd4;
 }
 
 #concluirBtn {
@@ -84,94 +97,13 @@ body {
     width: 100%;
     font-size: 17px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: all ease 0.40s;
 }
 
 #concluirBtn:hover {
-    background-color: #219653;
+    background-color: #1ba3a1;
 }
 
-.rs {
-    color: #27ae60;
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-#totalVolumes {
-    font-weight: bold;
-    font-size: 18px;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-#copiedMsg {
-    font-size: 14px;
-    color: #333;
-    display: none;
-}
-
-#copiedTable {
-    border-collapse: collapse;
-    margin: 20px auto;
-    border: 2px solid #27ae60;
-    border-radius: 10px;
-}
-
-#copiedTable th, #copiedTable td {
-    padding: 10px;
-    border-bottom: 2px solid #ddd;
-    text-align: left;
-    width: 100%;
-}
-
-#copiedTable th {
-    background-color: #27ae60;
-    color: white;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
-#copiedTable td:first-child {
-    border-left: none;
-}
-
-#copiedTable td:last-child {
-    border-right: none;
-}
-
-#progressBarContainer {
-    margin: 20px auto;
-    width: 100%;
-    height: 20px;
-    background-color: #ddd;
-    border-radius: 10px;
-    overflow: hidden;
-    display: none;
-    position: relative;
-}
-
-#progressBar {
-    width: 0;
-    height: 100%;
-    background-color: #27ae60;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-#progressText {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: bold;
-}
 
 #developerTag {
     top: 20px;
@@ -179,7 +111,7 @@ body {
     position: fixed;
     left: 50%;
     transform: translateX(-50%);
-    color: #333;
+    color: #696969;
 }
 
 @media only screen and (max-width: 500px) {
@@ -187,55 +119,74 @@ body {
         width: 95%;
     }
 }
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8); /* Fundo transparente */
+    backdrop-filter: blur(10px); /* Efeito de desfoque */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    display: none; /* Inicialmente oculto */
+    z-index: 999; /* Para garantir que a sidebar fique acima do conteúdo */
+}
 
 #menuHamburguer {
     position: fixed;
+    color: #000000;
     top: 15px;
     left: 20px;
+    font-size: 25px;
     cursor: pointer;
-}
-
-#menuHamburguer .fa-bars {
-    font-size: 24px;
-    color: #333;
-}
-
-#menuContent {
-    display: none;
-    position: absolute;
-    top: 30px;
-    left: 0;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Acima da sidebar */
 }
 
 #menuContent a {
     display: block;
-    padding: 10px 20px;
+    padding: 10px;
     color: #333;
     text-decoration: none;
+    margin: 30px 0 0 0;
+    border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
 #menuContent a:hover {
-    background-color: #f2f2f2;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
-
-.texto { 
-    align-items: center;
-    justify-content: center;
-    display: flex;
-}
-
-.texto a {
-    text-decoration: none;
-    font-weight: 900;
-    color: #ffffff;
+/* Estilo para esconder e mostrar a sidebar */
+#sidebar.show {
     display: block;
-    padding: 15px 20px;
-    background: #000000;
-    border-radius: 20px;
-    box-shadow: 0px 0px 3px #333;
+}
+
+
+#loadingOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 2000;
+}
+
+.loader {
+    border: 10px solid #f3f3f3; /* Laranja claro */
+    border-top: 10px solid #27ae60; /* Laranja escuro */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
