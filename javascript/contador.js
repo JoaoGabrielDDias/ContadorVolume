@@ -1,10 +1,8 @@
-// Menu Hambúrguer
-let menuHamburguer = document.getElementById('menuHamburguer');
-let menuContent = document.getElementById('menuContent');
-menuHamburguer.addEventListener('click', () => {
-    menuContent.style.display = menuContent.style.display === 'block' ? 'none' : 'block';
+// Função para mostrar ou esconder a sidebar
+document.getElementById('menuHamburguer').addEventListener('click', () => {
+  const sidebar = document.getElementById('sidebar');
+  sidebar.classList.toggle('show');
 });
-
 
 // Seleção de elementos
 
@@ -38,34 +36,35 @@ subtractBtns.forEach((btn, index) => {
 
 // Função para concluir e mostrar resultados
 document.getElementById('concluirBtn').addEventListener('click', () => {
-    // Mostrar barra de progresso e ocultar os resultados
-    resultContainer.style.display = 'block';
-    progressBarContainer.style.display = 'block';
-
-    
-
-    // Inicializar barra de progresso
-    progressBar.style.width = '0%';
-    progressText.textContent = '0%';
+    // Mostrar a barra de carregamento centralizada
+    mostrarCarregamento();
 
     // Simular carregamento com um delay
-    let progress = 0;
-    let interval = setInterval(() => {
-        progress += 10;
-        progressBar.style.width = `${progress}%`;
-        progressText.textContent = `${progress}%`;
-
-        if (progress >= 100) {
-            clearInterval(interval);
-            // Após o carregamento, mostrar os resultados
-            setTimeout(() => {
-                progressBarContainer.style.display = 'none';
-                resultContainer.style.display = 'block';
-                mostrarResultados();
-            }, 500);
-        }
-    }, 100);
+    setTimeout(() => {
+        // Após o carregamento, mostrar resultados
+        ocultarCarregamento();
+        mostrarResultados();
+    }, 4000); // Atraso de 2 segundos para simular carregamento
 });
+
+// Função para mostrar o carregamento
+function mostrarCarregamento() {
+    const loadingOverlay = document.createElement('div');
+    loadingOverlay.id = 'loadingOverlay';
+    loadingOverlay.innerHTML = `
+        <div class="loader"></div>
+        <p>Carregando...</p>
+    `;
+    document.body.appendChild(loadingOverlay);
+}
+
+// Função para ocultar o carregamento
+function ocultarCarregamento() {
+    const loadingOverlay = document.getElementById('loadingOverlay');
+    if (loadingOverlay) {
+        loadingOverlay.remove();
+    }
+}
 
 // Função para mostrar resultados e copiar para a área de transferência
 function mostrarResultados() {
@@ -79,23 +78,22 @@ function mostrarResultados() {
     });
 
     clipboardData += `\nTotal de volumes:\t*${totalVolumes}*`;
-    totalVolumesDisplay.textContent = `✅Total de volumes: ${totalVolumes}`;
-    copiedMsg.style.display = 'block'; // Exibindo mensagem de dados copiados
+
+    // Usando SweetAlert2 para mostrar os resultados
+    Swal.fire({
+        title: 'Prontinho',
+        text: '✨ Dados copiados com sucesso!',
+        icon: 'success',
+        confirmButtonText: 'OK',
+    });
 
     // Copiar dados para a área de transferência
     navigator.clipboard.writeText(clipboardData)
         .then(() => {
-            // Sucesso ao copiar
+            console.log('Dados copiados para a área de transferência.');
         })
         .catch(err => {
             console.error('Erro ao copiar dados: ', err);
             alert('Erro ao copiar dados para a área de transferência. Por favor, copie manualmente.');
         });
-
-        
-        
 }
-
-
-
-
